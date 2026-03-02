@@ -1,0 +1,18 @@
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Java / Maven
+target/
+out/
+*.class
+
+# Logs
+*.log
+
+# Local secrets
+dpccgaming_backend/src/main/resources/application-local.yml
