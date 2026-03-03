@@ -15,3 +15,12 @@ mybatis-plus:
 
 server:
   port: ${SERVER_PORT:8080}
+
+auth:
+  jwt:
+    secret: ${JWT_SECRET:replace-with-at-least32-char-secret-key}
+    expire-seconds: ${JWT_EXPIRE_SECONDS:7200}
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
