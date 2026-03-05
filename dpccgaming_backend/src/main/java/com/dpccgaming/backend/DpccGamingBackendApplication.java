@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.dpccgaming.backend")
+@MapperScan("com.dpccgaming.backend.auth.repository")
 public class DpccGamingBackendApplication {
 
     public static void main(String[] args) {

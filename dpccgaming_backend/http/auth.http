@@ -1,0 +1,26 @@
+### 1) 正常注册
+POST http://localhost:8080/api/register
+Content-Type: application/json
+
+{
+  "username": "testuser01",
+  "password": "123456"
+}
+
+### 2) 重复用户名（执行一次1后再执行）
+POST http://localhost:8080/api/register
+Content-Type: application/json
+
+{
+  "username": "testuser01",
+  "password": "123456"
+}
+
+### 3) 参数非法（用户名太短）
+POST http://localhost:8080/api/register
+Content-Type: application/json
+
+{
+  "username": "ab",
+  "password": "123456"
+}

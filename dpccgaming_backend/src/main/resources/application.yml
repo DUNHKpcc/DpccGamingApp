@@ -2,9 +2,12 @@ spring:
   application:
     name: dpccgaming_app
   datasource:
-    url: ${DB_URL:jdbc:mysql://127.0.0.1:3306/dpccgaming?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true}
-    username: ${DB_USERNAME:dpccgaming}
-    password: ${DB_PASSWORD}
+    url: ${DB_URL:${SPRING_DATASOURCE_URL:jdbc:mysql://127.0.0.1:13306/dpccgaming?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true}}
+    username: ${DB_USERNAME:${SPRING_DATASOURCE_USERNAME:dpccgaming}}
+    password: ${DB_PASSWORD:${SPRING_DATASOURCE_PASSWORD:}}
+  flyway:
+    enabled: ${FLYWAY_ENABLED:false}
+    baseline-on-migrate: true
 
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**/*.xml
@@ -20,7 +23,3 @@ auth:
   jwt:
     secret: ${JWT_SECRET:replace-with-at-least32-char-secret-key}
     expire-seconds: ${JWT_EXPIRE_SECONDS:7200}
-
-  flyway:
-    enabled: true
-    baseline-on-migrate: true
