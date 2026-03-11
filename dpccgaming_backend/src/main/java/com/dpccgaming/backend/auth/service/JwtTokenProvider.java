@@ -1,14 +1,14 @@
 package com.dpccgaming.backend.auth.service;
 
+import com.dpccgaming.backend.auth.security.LoginUser;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
-import lombok.Value;
-import org.springframework.stereotype.Component;
-
 import java.nio.charset.StandardCharsets;
 import java.time.Instant;
 import java.util.Date;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 @Component
 public class JwtTokenProvider {
@@ -45,4 +45,3 @@ public class JwtTokenProvider {
         return new LoginUser(userId, username);
     }
 }
-
