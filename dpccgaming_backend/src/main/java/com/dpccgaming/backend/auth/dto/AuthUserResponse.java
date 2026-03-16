@@ -4,13 +4,13 @@ public class AuthUserResponse {
     private final Long id;
     private final String username;
     private final String role;
-    private final Integer isBanned;
+    private final String status;
 
-    public AuthUserResponse(Long id, String username, String role, Integer isBanned) {
+    public AuthUserResponse(Long id, String username, String role, String status) {
         this.id = id;
         this.username = username;
         this.role = role;
-        this.isBanned = isBanned;
+        this.status = status;
     }
 
     public Long getId() {
@@ -25,7 +25,7 @@ public class AuthUserResponse {
         return role;
     }
 
-    public Integer getIsBanned() {
-        return isBanned;
+    public String getStatus() {
+        return status;
     }
 }

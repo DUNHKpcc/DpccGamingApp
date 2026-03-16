@@ -14,9 +14,11 @@ public class User {
 
     private String passwordHash;
 
+    private String email;
+
     private String role;
 
-    private Integer isBanned;
+    private String status;
 
     private LocalDateTime createdAt;
 
@@ -52,12 +54,20 @@ public class User {
         this.role = role;
     }
 
-    public Integer getIsBanned() {
-        return isBanned;
+    public String getStatus() {
+        return status;
     }
 
-    public void setIsBanned(Integer isBanned) {
-        this.isBanned = isBanned;
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public LocalDateTime getCreatedAt() {

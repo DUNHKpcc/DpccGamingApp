@@ -45,7 +45,7 @@ public class AuthServiceImpl implements AuthService {
         user.setUsername(request.getUsername());
         user.setPasswordHash(passwordEncoder.encode(request.getPassword()));
         user.setRole("user");
-        user.setIsBanned(0);
+        user.setStatus("active");
 
         int rows = userMapper.insert(user);
         if (rows != 1) {
@@ -67,7 +67,7 @@ public class AuthServiceImpl implements AuthService {
             throw new BusinessException("AUTH_INVALID", "用户名或密码错误");
         }
 
-        if (Integer.valueOf(1).equals(user.getIsBanned())) {
+        if ("banned".equalsIgnoreCase(user.getStatus())) {
             throw new BusinessException("USER_BANNED", "账户已被禁用");
         }
 
@@ -104,7 +104,7 @@ public class AuthServiceImpl implements AuthService {
                 user.getId(),
                 user.getUsername(),
                 user.getRole(),
-                user.getIsBanned()
+                user.getStatus()
         );
     }
 
@@ -113,7 +113,7 @@ public class AuthServiceImpl implements AuthService {
                 user.getId(),
                 user.getUsername(),
                 user.getRole(),
-                user.getIsBanned(),
+                user.getStatus(),
                 user.getCreatedAt()
         );
     }

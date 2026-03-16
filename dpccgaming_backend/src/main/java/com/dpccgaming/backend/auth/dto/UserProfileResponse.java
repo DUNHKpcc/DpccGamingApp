@@ -6,14 +6,14 @@ public class UserProfileResponse {
     private final Long id;
     private final String username;
     private final String role;
-    private final Integer isBanned;
+    private final String status;
     private final LocalDateTime createdAt;
 
-    public UserProfileResponse(Long id, String username, String role, Integer isBanned, LocalDateTime createdAt) {
+    public UserProfileResponse(Long id, String username, String role, String status, LocalDateTime createdAt) {
         this.id = id;
         this.username = username;
         this.role = role;
-        this.isBanned = isBanned;
+        this.status = status;
         this.createdAt = createdAt;
     }
 
@@ -29,8 +29,8 @@ public class UserProfileResponse {
         return role;
     }
 
-    public Integer getIsBanned() {
-        return isBanned;
+    public String getStatus() {
+        return status;
     }
 
     public LocalDateTime getCreatedAt() {
